@@ -1,0 +1,2 @@
+#!/bin/bash
+awk 'NR>1{c[$1]++}END{for(h in c)print c[h],h}' | sort -k1,1nr -k2 | head -n11 | cut -d' ' -f2-
