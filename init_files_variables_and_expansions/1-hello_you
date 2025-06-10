@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "hello $(whoami)"
+getent passwd $(id -u) | cut -d: -f1
