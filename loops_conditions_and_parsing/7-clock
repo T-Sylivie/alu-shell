@@ -1,13 +1,7 @@
 #!/usr/bin/env bash
-# Displays the time from hour 0 to 12 and minutes 1 to 59 using a while loop
+# Lists part of each filename after the first dash, excluding hidden and non-regular files
 
-hour=0
-while [ "$hour" -le 12 ]; do
-  echo "Hour: $hour"
-  minute=1
-  while [ "$minute" -le 59 ]; do
-    echo "$minute"
-    minute=$((minute + 1))
-  done
-  hour=$((hour + 1))
+shopt -s nullglob
+for file in *; do
+  [ -f "$file" ] && echo "${file#*-}"
 done
