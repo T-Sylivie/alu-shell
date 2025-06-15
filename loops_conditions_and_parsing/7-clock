@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Lists part of each filename after the first dash, excluding hidden and non-regular files
+# Lists part of filename after the first dash
 
-shopt -s nullglob
-for file in *; do
-  [ -f "$file" ] && echo "${file#*-}"
+for file in *-*; do
+  if [ -f "$file" ]; then
+    echo "${file#*-}"
+  fi
 done
