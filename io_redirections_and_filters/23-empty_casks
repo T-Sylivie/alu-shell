@@ -1,2 +1,2 @@
 #!/bin/bash
-find . \( -type f -empty -o -type d -empty \) | while IFS= read -r path; do echo "${path##*/}"; done
+find . -type d -empty -printf "%f\n" -o -type f -empty -printf "%f\n"
