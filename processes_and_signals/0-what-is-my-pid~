@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Get and display the script's PID
-echo -e "$$\n"
+echo "The PID of this script is: $$"
