@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
-# Lists part of filename after the first dash
+# Using a for loop to iterate through the content of the current directory
+for item in *
+do
+   
+    if [[ $item == .* ]]
+    then
+        continue 
+    fi
 
-for file in *-*; do
-  if [ -f "$file" ]; then
-    echo "${file#*-}"
-  fi
+
+    name_part=$(echo "$item" | cut -d '-' -f 2-)
+
+    echo "$name_part"
 done
